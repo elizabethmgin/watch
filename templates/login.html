@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+{% block head %}
+<title>DASHBOARD</title>
+
+<link rel="stylesheet" href="http://50.116.10.109/~ginontherocks/p/test2/static/style.css" type="text/css"/>
+<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script type=text/javascript src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
+<script type=text/javascript src="http://50.116.10.109/~ginontherocks/p/test2/static/sortable.js"></script>
+<style>
+	input[type=checkbox], input[type=radio] {
+		margin: 0 5px 0 20px;
+	}
+	.choose {
+		margin: 0 0 0 10px;
+	}
+	.main {
+		margin-bottom: 30px;
+	}
+	.profile {
+		margin: 10px 20px 0 0;
+		border: 1px solid #FDD017;
+	    border-radius: 10px;
+	    -moz-border-radius: 10px;
+	    -webkit-border-radius: 10px;
+	    -o-border-radius: 10px;
+		float: left;
+	}
+</style>
+{% endblock %}
+
+{% block body %}
+<body>
+	<nav>
+		<a href="http://50.116.10.109/~ginontherocks/p/test2/">HOME</a>
+		<a href="http://50.116.10.109/~ginontherocks/p/test2/multiply">MULTIPLY</a>
+		<a href="http://50.116.10.109/~ginontherocks/p/test2/sms">SMS</a>
+			<div id='sub-nav'>
+				<a href="http://50.116.10.109/~ginontherocks/p/test2/login">ACCOUNT</a>
+				<a href="http://50.116.10.109/~ginontherocks/p/test2/comment">COMMENT</a>
+			</div>
+	</nav>
+	<h1 class="white">Welcome, Olivia</h1>
+	<div class="clear"></div>
+    <section class="comment main">
+    <h1>Who or What to Watch?</h1>
+        <form name="quote">
+            <table>
+            <tr><td class="tag">WATCH:</td><td><input type="text" name="source" size="40" maxlength="80" required /></td></tr>
+            <tr><td class="tag">UPDATES:</td><td><input type="checkbox" name="rss" required />RSS<input type="checkbox" name="twitter" />Twitter<input type="checkbox" name="quote" />Quotes</td></tr>
+			<tr><td class="tag">FREQUENCY:</td><td><input type="radio" name="real" required />Real Time<input type="radio" name="hourly" required />Hourly<input type="radio" name="daily" required />Daily<input type="radio" name="weekly" required />Weekly</td></tr>
+			<tr><td class="tag">RECEIVE LINKS:</td><td><input type="radio" name="yes" required />Yes<input type="radio" name="no" required />No</td></tr>
+            </table>
+            <input type="submit" class="submit" value="Subscribe" />
+        </form>
+    </section>
+
+	<section class="main">
+	<h2>Your Watches</h2>
+	<table id="hor-zebra">
+	    <thead>
+	    	<tr>
+	            <th scope="col">Victim</th>
+	            <th scope="col">RSS</th>
+				<th scope="col">Twitter</th>
+				<th scope="col">Quote</th>
+				<th scope="col">Frequency</th>
+				<th scope="col">Start</th>
+				<th scope="col">Advanced</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	        <tr>
+	        <td>Barack Obama</td>
+	        <td>Yes</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>Daily</td>
+			<td>2012-08-08</td>
+			<td><input type="submit" class="submit choose" value="Edit" /></td>
+	        </tr>
+			<tr>
+	        <td>Olympics</td>
+	        <td>Yes</td>
+			<td>Yes</td>
+			<td>No</td>
+			<td>Real Time</td>
+			<td>2012-08-02</td>
+			<td><input type="submit" class="submit choose" value="Edit" /></td>
+	        </tr>
+			<tr>
+	        <td>Parabens</td>
+	        <td>Yes</td>
+			<td>Yes</td>
+			<td>No</td>
+			<td>Weekly</td>
+			<td>2012-08-03</td>
+			<td><input type="submit" class="submit choose" value="Edit" /></td>
+	        </tr>
+	    </tbody>
+	</table>
+	</section>
+	<section class="comment main">
+		<h2>Your Profile</h2><input type="submit" class="submit choose" style="float:right;margin-top:10px;"value="Edit" />
+		<img class="profile" src="http://50.116.10.109/~ginontherocks/p/test2/static/images/olivia.png">
+		<table style="float:left;margin-top:10px;">
+			<tr><td class="tag">NAME:</td><td>Olivia Amoding Okello</td></tr>
+			<tr><td class="tag">AGE:</td><td>25</td></tr>
+			<tr><td class="tag">GENDER:</td><td>Female</td></tr>
+			<tr><td class="tag">LOCATION:</td><td>Soroti, Uganda</td></tr>
+			<tr><td class="tag">DISTRICT:</td><td>Uganda</td></tr>
+			<tr><td class="tag">PHONE:</td><td>Nokia 3310</td></tr>
+		</table>
+            
+	</section>
+	<section class="main">
+		<h2>Your Look &amp; Feel</h2>
+		<form name="quote">
+            <table>
+            <tr><td class="tag">BACKGROUND IMAGE:</td><td><input type="text" name="source" size="40" maxlength="80" required /></td><td><input type="submit" class="submit choose" value="Choose" /></td></tr>
+            </table>
+            <input type="submit" class="submit" value="Upload" />
+        </form>
+	</section>
+	
+
+</body>
+{% endblock %}

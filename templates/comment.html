@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% block head %}
+<title>YOU SAY</title>
+
+<link rel="stylesheet" href="http://50.116.10.109/~ginontherocks/p/test2/static/style.css" type="text/css"/>
+<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script type=text/javascript src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
+<script type=text/javascript src="http://50.116.10.109/~ginontherocks/p/test2/static/sortable.js"></script>
+
+{% endblock %}
+
+{% block body %}
+<body>
+	<nav>
+		<a href="http://50.116.10.109/~ginontherocks/p/test2/">HOME</a>
+		<a href="http://50.116.10.109/~ginontherocks/p/test2/multiply">MULTIPLY</a>
+		<a href="http://50.116.10.109/~ginontherocks/p/test2/sms">SMS</a>
+			<div id='sub-nav'>
+				<a href="http://50.116.10.109/~ginontherocks/p/test2/login">ACCOUNT</a>
+				<a href="http://50.116.10.109/~ginontherocks/p/test2/comment">COMMENT</a>
+			</div>
+	</nav>
+	<h1 class="white">Henry Okello Oryem SAYS</h1>
+	<div class="clear"></div>
+    <section class="comment main">
+				<h3>Uganda Denies Backing DRC Rebels</h3>
+				<p>That is rubbish, categorically rubbish and, I can repeat, rubbish.</p>
+				<p class="caption left">DATE: 2012-08-03</p>
+				<p class="caption left">TAGS: Congo military</p>
+        <form class="comment">
+            <table>
+            <tr><td valign="top" class="tag">YOU SAY:</td><td><textarea type="text" name="comment" cols="50" rows="2" wrap="soft" required /></textarea></td></tr>
+            </table>
+            <input type="submit" class="submit" value="Respond" />
+        </form>
+    </section>
+
+	<section class="comment main">
+				<h3>Museveni begged Angola not to enter DR Congo</h3>
+				<p>The ministers will agree on the modalities, like the size of the neutral force, what logistics are required and when to deploy.</p>
+				<p class="caption left">DATE: 2012-08-09</p>
+				<p class="caption left">TAGS: Congo military</p>
+        <form class="comment">
+            <table>
+            <tr><td valign="top" class="tag">YOU SAY:</td><td><textarea type="text" name="comment" cols="50" rows="2" wrap="soft" required /></textarea></td></tr>
+            </table>
+            <input type="submit" class="submit" value="Respond" />
+        </form>
+    </section>
+
+
+</body>
+{% endblock %}

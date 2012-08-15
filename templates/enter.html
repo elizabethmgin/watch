@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% block head %}
+<title>#watch</title>
+
+<link rel="stylesheet" href="http://50.116.10.109/~ginontherocks/p/test2/static/style.css" type="text/css"/>
+{% endblock %}
+
+{% block body %}
+<body>
+	<nav>
+		<a href="http://50.116.10.109/~ginontherocks/p/test2/multiply">MULTIPLY</a>
+		<a href="http://50.116.10.109/~ginontherocks/p/test2/sms">SMS</a>
+			<div id='sub-nav'>
+				<a href="http://50.116.10.109/~ginontherocks/p/test2/login">ACCOUNT</a>
+				<a href="http://50.116.10.109/~ginontherocks/p/test2/comment">COMMENT</a>
+			</div>
+	</nav>
+    <center>
+    <section id="form" class="main">
+    <h1>#watch</h1>
+        <form name="quote" action="http://50.116.10.109/~ginontherocks/p/test2/dashboard" method="post">
+            <table>
+            <tr><td class="tag">WATCH:</td><td><input type="text" name="figure" size="40" maxlength="40" required /></td></tr>
+            </table>
+            <input type="submit" class="create" value="Create Dashboard" />
+        </form>
+    </section>
+	</center>
+</body>
+{% endblock %}

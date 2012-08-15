@@ -1,0 +1,273 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	/*vertical-align: baseline;*/
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html { 
+	background: url(http://50.116.10.109/~ginontherocks/p/test2/static/images/Mbale.JPG) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    }
+body {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    line-height: 1.4em;
+    font-size: 14px;
+    color: #000000;
+    }
+nav {
+    width: 100%;
+    background: rgba(230,230,230,.70);
+    border-bottom: 1px solid #000000;
+    position: fixed;
+    height: 50px;
+    margin: 0;
+}
+nav a {
+    float: right;
+    padding: 20px;
+    margin-right: 50px;
+}
+
+div#sub-nav {
+    float: left;
+    margin-left: 50px;
+}
+div#sub-nav a {
+    color: rgba(230,230,230,.70);
+}
+div#sub-nav a:hover {
+    color: #000000;
+}
+h1 {
+    color: #000000;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 2em;
+    text-transform: uppercase;
+    }
+h1.white {
+    color: #FFFFFF;
+    margin: 65px 0 20px 45px;
+    float: left;
+}
+h2 {
+    color: #000000;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 15px 0 10px 0;
+    }
+h3 {
+    color: #D70808;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 0 10px 0;
+}
+h4 {
+    font-size: 16px;
+    padding-bottom: 0;
+    margin-bottom: 5px;
+}
+input, textarea {
+    font-size: 14px;
+    color: #D70808;
+    background: #FAFAFA;
+    border: 1px solid #FDD017;
+    padding: 3px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -o-border-radius: 3px;
+    }
+.tag {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #D70808;
+    }
+.submit {
+    margin-top: 10px;
+    padding: 3px 4px;
+    margin-left: 270px;
+    }
+.create {
+    margin-top: 10px;
+    padding: 3px 4px;
+    }
+.submit:hover, .create:hover {
+    color: #D70808;
+    border: 1px solid #D70808;
+    }
+a {
+    color: #D70808;
+    text-decoration: none;
+    }
+a.black {
+    color: #000000;
+    text-decoration: none;
+    float: right;
+    padding: 10px;
+    font-size: 12px;
+}
+a.black:hover {
+    text-decoration: underline;
+}
+section {
+    float: left;
+    }
+section#form {
+    margin: 80px 25px 40px 45px;
+    width: 40%;
+    }
+section#form td, section.comment td {
+    padding: 0 5px 10px 0;
+}
+section.comment {
+    margin: 0 25px 40px 45px;
+    width: 40%;
+}
+section.main {
+    background-color: rgba(255,255,255,.75);
+    padding: 10px 25px 25px 25px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+div#twtr-widget-1.twtr-widget {
+    margin: 10px;
+    width: 300px;
+}
+article#twitter {
+    float: left;
+    margin: 80px 0 40px 0;
+}
+section#rss {
+    margin: 90px 0 45px 0;
+    width: 360px;
+    background-color: #E6E6E6;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+section#rss h2 {
+    padding-left: 10px;
+}
+article#rss-inside {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    width: 330px;
+    padding: 15px 15px 0 15px;
+    margin-bottom: 5px;
+}
+section#quotes {
+    margin: 7px 0 0 45px;
+    width: 80%;
+}
+.caption {
+    font-size: 10px;
+    padding: 5px 0 35px 0;
+    }
+.left {
+    float: left;
+    padding-right: 15px;
+    padding-left: 10px;
+}
+.note {
+    font-size: 10px;
+    color: #424242;
+    padding: 5px 0 0 15px;
+}
+#hor-zebra {
+    width: 98%;
+    text-align: left;
+    border-collapse: collapse;
+    }
+#hor-zebra th {
+    font-size: 16px;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 10px 8px;
+    color: #D70808;
+    }
+#hor-zebra thead {
+    border-bottom: 1px solid #D70808;
+}
+#hor-zebra td {
+    padding: 8px 8px 10px 8px;
+    color: #2E2E2E;
+    }
+#hor-zebra tr:nth-child(even) {
+    background: #D8D8D8; 
+    }
+#hor-zebra tbody tr:hover td, a:hover {
+    color: #000000;
+    cursor: pointer;
+    }
+p {
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+}
+form.comment {
+    padding-left: 10px;
+}
+form.comment .submit {
+    float: right;
+    margin-right: 50px;
+}
+.clear {
+    clear: both;
+}
+

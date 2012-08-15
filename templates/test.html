@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+{% block head %}
+<title>SMS</title>
+
+<link rel="stylesheet" href="http://50.116.10.109/~ginontherocks/p/test2/static/style.css" type="text/css"/>
+
+<style type="text/css">
+section.main {
+	margin: 80px 0 30px 45px;
+}
+            
+	.hor-zebra {
+	    width: 98%;
+	    text-align: left;
+	    border-collapse: collapse;
+	    }
+	.hor-zebra th {
+	    font-size: 16px;
+	    font-weight: normal;
+	    text-transform: uppercase;
+	    padding: 10px 8px;
+	    color: #D70808;
+	    }
+	.hor-zebra thead {
+	    border-bottom: 1px solid #D70808;
+	}
+	.hor-zebra td {
+	    padding: 8px 8px 10px 8px;
+	    color: #2E2E2E;
+	    }
+	.hor-zebra tr:nth-child(even) {
+	    background: #D8D8D8; 
+	    }
+	.hor-zebra tbody tr:hover td, a:hover {
+	    color: #000000;
+	    }
+    
+</style>
+    
+{% endblock %}
+
+{% block body %}
+<body>
+	<nav>
+		<a href="http://50.116.10.109/~ginontherocks/p/test2/">HOME</a>
+		<a href="http://50.116.10.109/~ginontherocks/p/test2/multiply">MULTIPLY</a>
+		<a href="http://50.116.10.109/~ginontherocks/p/test2/sms">SMS</a>
+			<div id='sub-nav'>
+				<a href="http://50.116.10.109/~ginontherocks/p/test2/login">ACCOUNT</a>
+				<a href="http://50.116.10.109/~ginontherocks/p/test2/comment">COMMENT</a>
+			</div>
+	</nav>
+<section class="main">
+<h2>SMS Messages</h2>
+<table class="hor-zebra">
+    <thead>
+    	<tr>
+            <th scope="col">Time Answered</th>
+            <th scope="col">Direction</th>
+			<th scope="col">SMS To</th>
+			<th scope="col">SMS Type</th>
+			<th scope="col">Message UUID</th>
+			<th scope="col">SMS From</th>
+			<th scope="col">SMS Text</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for sms in sms_list %}
+        <tr>
+        <td>{{ sms.timeAnswered }}</td>
+        <td>{{ sms.direction }}</td>
+		<td>{{ sms.smsTo }}</td>
+		<td>{{ sms.smsType }}</td>
+		<td>{{ sms.smsMessageUUID }}</td>
+		<td>{{ sms.smsFrom }}</td>
+		<td>{{ sms.smsText }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</section>
+
+<section class="main">
+<h2>SMS Users</h2>
+<table class="hor-zebra">
+    <thead>
+    	<tr>
+            <th scope="col">Caller</th>
+            <th scope="col">RSS</th>
+			<th scope="col">Twitter</th>
+			<th scope="col">Quote</th>
+			<th scope="col">Interacting</th>
+			<th scope="col">Created At</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for user in user_list %}
+        <tr>
+        <td>{{ user.number }}</td>
+        <td>{{ user.rss }}</td>
+		<td>{{ user.sms }}</td>
+		<td>{{ user.quote }}</td>
+		<td>{{ user.interacting }}</td>
+		<td>{{ user.createdAt }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</section>
+
+
+    
+    
+
+</body>
+{% endblock %}
+
+

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+{% block head %}
+<title>DASHBOARD</title>
+
+<link rel="stylesheet" href="http://50.116.10.109/~ginontherocks/p/test2/static/style.css" type="text/css"/>
+<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script type=text/javascript src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
+<script type=text/javascript src="http://50.116.10.109/~ginontherocks/p/test2/static/sortable.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("tr#source").click(function() {
+                url = $(this).attr("url");
+                window.open(url,'new window');
+                });
+            });
+		$(function() {
+			var currentValue = $('#currentValue');
+			$('#defaultSlider').change(function() {
+				currentValue.html(this.value);
+			});
+			$('#defaultSlider').change();
+		})
+    </script>
+{% endblock %}
+
+{% block body %}
+<body>
+	<nav>
+		<a href="http://50.116.10.109/~ginontherocks/p/test2/">HOME</a>
+		<a href="http://50.116.10.109/~ginontherocks/p/test2/multiply">MULTIPLY</a>
+		<a href="http://50.116.10.109/~ginontherocks/p/test2/sms">SMS</a>
+			<div id='sub-nav'>
+				<a href="http://50.116.10.109/~ginontherocks/p/test2/login">ACCOUNT</a>
+				<a href="http://50.116.10.109/~ginontherocks/p/test2/comment">COMMENT</a>
+			</div>
+	</nav>
+    <section id="form" class="main">
+    <h1>{{ figure }} watch</h1>
+        <form name="quote" action="http://50.116.10.109/~ginontherocks/p/test2/text" method="post">
+            <table>
+            <tr><td valign="top" class="tag">{{ figure }} SAID:</td><td><textarea type="text" name="text" cols="40" rows="8" wrap="soft" required /></textarea></td></tr>
+            <tr><td class="tag">WHEN:</td><td><input type="date" name="date" size="10" maxlength="10" required /></td></tr>
+			<tr><td class="tag">HEADLINE:</td><td><input type="text" name="headline" size="40" maxlength="80" required /></td></tr>
+            <tr><td class="tag">SOURCE:</td><td><input type="text" name="source" size="40" maxlength="80" required /></td></tr>
+            <tr><td class="tag">TAGS:</td><td><input type="text" name="tags" size="40" maxlength="80" required /></td></tr>
+            <tr><td valign="top" class="tag">RATING:</td>
+                <td><input id="defaultSlider" type="range" name='rating' min="0" max="10" />
+				<p class="note">Current value: <span id="currentValue">0</span></p></td>
+				</tr>
+            </table>
+            <input type="submit" class="submit" value="Record" />
+        </form>
+    </section>
+	<article id="twitter">
+	<script>
+	new TWTR.Widget({
+	  version: 2,
+	  type: 'search',
+	  search: '{{ twitterHandle }}',
+	  interval: 30000,
+	  title: '{{ figure }} Tweets',
+	  subject: '',
+	  width: 250,
+	  height: 300,
+	  theme: {
+	    shell: {
+	      background: '#e6e6e6',
+	      color: '#000000',
+	    },
+	    tweets: {
+	      background: '#ffffff',
+	      color: '#444444',
+	      links: '#d70808'
+	    }
+	  },
+	  features: {
+	    scrollbar: false,
+	    loop: true,
+	    live: true,
+	    behavior: 'default'
+	  }
+	}).render().start();
+	</script>
+	</article>
+	<section id="rss">
+		<h2>{{ figure }} NEWS</h2>
+		<article id="rss-inside">
+		    {% for entry in new_feed %}
+			<h4><a href="{{ entry.link }}" target="_blank">{{ entry.title }}</a></h4>
+				<p class="summary">{{ entry.summary }}</p>
+		        <p class="caption">{{ entry.published }}</p>
+		    {% endfor %}
+		</article>
+		<a class="black" href="{{ rssLink }}" target="_blank">RSS Feed</a>
+	</section>
+	<section class="clear">
+		</section>
+	<section id="quotes" class="main">
+		<h2>{{ figure }} QUOTES</h2>
+		<table class="sortable" id="hor-zebra">
+		    <thead>
+		    	<tr>
+		            <th scope="col">Quote</th>
+					<th scope="col">Headline</th>
+		            <th scope="col">Tags</th>
+					<th scope="col" width='90px'>Rating</th>
+		            <th scope="col" width='85px'>Date</th>
+		        </tr>
+		    </thead>
+		    <tbody>
+		    {% for input in input_list %}
+				{% if input.speaker == figure: %}
+		        	<tr id="source" url="{{ input.source }}">
+		        	<td>{{ input.text }}</td>
+					<td>{{ input.headline }}</td>
+					<td>{{ input.tags }}</td>
+					<td>{{ input.rating }}</td>
+		        	<td>{{ input.date }}</td>
+		        	</tr>
+				{% endif %}
+		    {% endfor %}
+		    </tbody>
+		</table>
+	</section>
+
+</body>
+{% endblock %}
